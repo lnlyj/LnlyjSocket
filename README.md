@@ -1,0 +1,2 @@
+# LnlyjSocket
+socket on android
