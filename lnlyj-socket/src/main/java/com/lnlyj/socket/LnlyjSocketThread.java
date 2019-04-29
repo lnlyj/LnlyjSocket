@@ -37,7 +37,7 @@ class LnlyjSocketThread extends Thread implements Handler.Callback {
         mInfo = info;
 
         mHandlerThread = new HandlerThread("SocketHandler");
-
+        mHandlerThread.start();
         mHandler = new Handler(mHandlerThread.getLooper(), this);
     }
 
@@ -172,6 +172,9 @@ class LnlyjSocketThread extends Thread implements Handler.Callback {
 
     public void release() {
         try {
+
+            mHandlerThread.quitSafely();
+
             if (mSocket != null) {
                 mSocket.shutdownInput();
                 mSocket.shutdownOutput();
