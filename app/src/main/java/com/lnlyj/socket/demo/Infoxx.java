@@ -1,26 +1,18 @@
-package com.lnlyj.socket;
+package com.lnlyj.socket.demo;
 
 import android.text.TextUtils;
 
-import org.w3c.dom.Text;
-
-import java.io.Serializable;
+import com.lnlyj.socket.LnlyjSocketInfo;
 
 /**
- * Created by Wanglei on 2019/4/28.
+ * Created by Wanglei on 2019/4/29.
  */
 
-public class LnlyjSocketInfo implements Serializable {
+public class Infoxx {
 
-    private static final long serialVersionUID = 5798288579974975277L;
+    String ip;
 
-    private String ip;
-    private int port;
-
-    public LnlyjSocketInfo(String ip, int port) {
-        this.ip = ip;
-        this.port = port;
-    }
+    int port;
 
     public String getIp() {
         return ip;
@@ -40,13 +32,13 @@ public class LnlyjSocketInfo implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-
         if (obj == null) {
             return false;
         }
 
-        return obj instanceof LnlyjSocketInfo && TextUtils.equals(((LnlyjSocketInfo) obj).ip, this.ip) && ((LnlyjSocketInfo) obj).port == port;
+        return obj instanceof Infoxx && TextUtils.equals(((Infoxx) obj).ip, this.ip) && ((Infoxx) obj).port == port;
     }
+
 
     @Override
     public int hashCode() {

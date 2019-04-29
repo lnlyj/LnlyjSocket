@@ -89,7 +89,7 @@ class LnlyjSocketThread extends Thread implements Handler.Callback {
         while (isConnect) {
 
             try {
-                readLength = mInputStream.read(bytes);
+                readLength = mInputStream.read(bytes, 0, bytes.length);
 
                 if (readLength > 0) {
                     byte[] data = new byte[readLength];
